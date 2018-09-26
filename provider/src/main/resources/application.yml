@@ -1,0 +1,24 @@
+server:
+  port: 8086
+mybatis:
+  mapper-locations: classpath:mappers/*.xml
+  config-location: classpath:mybatis-config.xml
+  type-aliases-package: com.dayuan.entity
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/movie9?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: "123"
+
+dubbo:
+  application:
+    name: provider
+  registry:
+    address: "zookeeper://182.61.20.11:2181"
+  protocol:
+    name: dubbo
+    port: 20885
+  consumer:
+    timeout: 10000
